@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class F {
+	// N 項資料任意排列
 	public static int[] list = new int[10];
 
 	public static void main(String[] args) {

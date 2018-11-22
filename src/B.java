@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class B {
-
+	// 最大公因數(GCD)
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("輸入計算值a:");
