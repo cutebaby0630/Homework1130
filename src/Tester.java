@@ -5,12 +5,44 @@ import java.util.TreeSet;
 
 public class Tester {
 	public static void main(String[] args) {
+		boolean exit = false;
 		Scanner scanner = new Scanner(System.in);
 		TreeSet<String>set = new TreeSet();
-		for(int i=1 ;i<6;i++) {
-			System.out.println("輸入一個數字(0-9)");
+		while (exit) {
+			System.out.println("輸入一個數字(1-9)，輸入0為離開");
 			String x = scanner.nextLine();
-			set.add(x);
+			switch (x) {
+			case "1":
+				set.add(x);
+				break;
+			case "2":
+				set.add(x);
+				break;
+			case "3":
+				set.add(x);
+				break;
+			case "4":
+				set.add(x);
+				break;
+			case "5":
+				set.add(x);
+				break;
+			case "6":
+				set.add(x);
+				break;
+			case "7":
+				set.add(x);
+				break;
+			case "8":
+				set.add(x);
+				break;
+			case "9":
+				set.add(x);
+				break;
+			case "0":
+				exit = true;
+				break;
+			}
 		}
 		ArrayList<TreeSet<String>> subset = getSubset(set);
 		System.out.println("一共有" + subset.size() + "個子集合。");
@@ -19,8 +51,8 @@ public class Tester {
 		}
 	}
 
-	// 求出从0到集合子集数目（这里为16）之间的数的二进制形式，存放在数组result中
-	public static String[] getBinaryValue(TreeSet<String> set) {
+	// 從0到集合子集数目之间數的二進位，存放在数组result中
+	public static String[] getBinary(TreeSet<String> set) {
 		int size = set.size();
 		int m = (int) Math.pow(2, size) - 1;
 		String[] result = new String[m + 1];
@@ -48,7 +80,7 @@ public class Tester {
 			items[i++] = item;
 		}
 		// 调用二进制字符串生成函数
-		String[] binaryValue = getBinaryValue(set);
+		String[] binaryValue = getBinary(set);
 		// 根据二进制字符串取集合元素构成子集
 		for (int j = 0; j < binaryValue.length; j++) {
 			String value = binaryValue[j];
