@@ -49,7 +49,7 @@ public class G {
 		ArrayList<TreeSet<String>> subset = finalSubset(set);
 		System.out.println("一共有" + subset.size() + "個子集合。");
 		for (TreeSet<String> ts : subset) {
-			System.out.print(ts.toString() + "\t");
+			System.out.print(ts.toString() + " ");
 		}
 	}
 
