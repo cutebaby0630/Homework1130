@@ -46,7 +46,7 @@ public class G {
 				break;
 			}
 		}
-		ArrayList<TreeSet<String>> subset = getSubset(set);
+		ArrayList<TreeSet<String>> subset = finalSubset(set);
 		System.out.println("一共有" + subset.size() + "個子集合。");
 		for (TreeSet<String> ts : subset) {
 			System.out.print(ts.toString() + "\t");
@@ -73,7 +73,7 @@ public class G {
 	}
 
 	// 根據二進為字串生成子集合
-	public static ArrayList<TreeSet<String>> getSubset(TreeSet<String> set) {
+	public static ArrayList<TreeSet<String>> finalSubset(TreeSet<String> set) {
 		ArrayList<TreeSet<String>> result = new ArrayList<TreeSet<String>>();
 
 		// 把集合放數陣列中，方便存取
