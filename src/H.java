@@ -5,7 +5,7 @@ public class H {
 	public static int[] list = new int[10];
 	public static int min = 0;
 	public static int max = 0;
-
+//	產生10個1~100的亂數
 	public H() {
 		Random random = new Random();
 		for (int b = 0; b < 10; b++) {
@@ -14,14 +14,7 @@ public class H {
 		}
 	}
 
-	public void print() {
-		System.out.print("樣本數列: { ");
-		for (int b = 0; b < list.length; b++) {
-			System.out.print(list[b] + " ");
-		}
-		System.out.println("}");
-	}
-
+//		選擇排序法 利用    max儲存最大數值的位子  min儲存最小數值的位子
 	public void comparison() {
 		for (int i = 0; i < list.length; i++) {
 			min = i;
@@ -34,6 +27,14 @@ public class H {
 			list[min] = list[i];
 			list[i] = temp;
 		}
+	}
+//	印出一開始的樣本數列
+	public void print() {
+		System.out.print("樣本數列: { ");
+		for (int b = 0; b < list.length; b++) {
+			System.out.print(list[b] + " ");
+		}
+		System.out.println("}");
 	}
 
 	public static void main(String[] args) {

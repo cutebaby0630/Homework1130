@@ -6,12 +6,12 @@ public class G {
 
 	public static boolean exit = true;
 
-//	輸入值讀取，收取最後結果並且印出
+	// 輸入值讀取，收取最後結果並且印出
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		TreeSet<String> set = new TreeSet();
 		while (exit) {
-			System.out.println("輸入一個數字(1-9)，輸入0為離開");
+			System.out.println("輸入一個數字(1-9)，輸入0為計算");
 			String x = scanner.nextLine();
 			switch (x) {
 			case "1":
@@ -49,6 +49,7 @@ public class G {
 		ArrayList<TreeSet<String>> subset = finalSubset(set);
 		System.out.println("一共有" + subset.size() + "個子集合。");
 		for (TreeSet<String> ts : subset) {
+			// toString 為StringBuffer更改為String
 			System.out.print(ts.toString() + " ");
 		}
 	}
@@ -59,6 +60,7 @@ public class G {
 		int m = (int) Math.pow(2, setsize) - 1;
 		String[] result = new String[m + 1];
 		for (int i = m; i > -1; i--) {
+			// 要頻繁對字符串內容進行修改所以使用StringBuffer
 			StringBuffer stringbuffer = new StringBuffer(Integer.toBinaryString(i));
 			int length = stringbuffer.length();
 			if (length < setsize) {
@@ -66,27 +68,28 @@ public class G {
 					stringbuffer.insert(0, "0");
 				}
 			}
-//			輸出最後的字串
+			// 輸出最後的字串
 			result[i] = stringbuffer.toString();
 		}
+		//
 		return result;
 	}
 
-	// 根據二進為字串生成子集合
+	// 根據二進位字串生成子集合
 	public static ArrayList<TreeSet<String>> finalSubset(TreeSet<String> set) {
 		ArrayList<TreeSet<String>> result = new ArrayList<TreeSet<String>>();
-
 		// 把集合放數陣列中，方便存取
 		String[] items = new String[set.size()];
 		int i = 0;
 		for (String item : set) {
 			items[i++] = item;
 		}
-		// 用二進為字串生成
+		// 用二進位字串生成
 		String[] binaryValue = getBinary(set);
-		// 根據二進位字串集合元素形成子集合
+		// 根據二進位字串集合  形成子集合放入subset中
 		for (int j = 0; j < binaryValue.length; j++) {
 			String value = binaryValue[j];
+			
 			TreeSet<String> subset = new TreeSet<String>();
 			for (int k = 0; k < value.length(); k++) {
 				if (value.charAt(k) == '1')

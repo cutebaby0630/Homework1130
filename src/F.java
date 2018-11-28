@@ -15,13 +15,13 @@ public class F {
 		num.shuffle();
 		num.print();
 	}
-
+//	產生0~9利用陣列儲存
 	public F() {
 		for (int i = 0; i < list.length; i++) {
 			list[i] = i;
 		}
 	}
-
+//產生亂數為交換位子的編號，利用tmp做交換
 	public void shuffle() {
 		Random r = new Random();
 		for (int i = 0; i < 10; i++) {
@@ -31,7 +31,7 @@ public class F {
 			list[j] = tmp;
 		}
 	}
-
+//印出陣列中所有的值
 	public void print() {
 		System.out.print("排列後 : { ");
 		for (int i : list) {

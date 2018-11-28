@@ -14,16 +14,17 @@ public class D {
 		System.out.println("運算答案為:" + num(a, b));
 	}
 
-	public static int tmp(int ans) {
+	public static int cal(int ans) {
+//		階層計算
 		if (ans == 1) {
 			return ans;
 		} else {
-			return ans * tmp(ans - 1);
+			return ans * cal(ans - 1);
 		}
 	}
 
 	public static int num(int a, int b) {
-		return tmp(a) / (tmp(b) * tmp(a - b));
+		return cal(a) / (cal(b) * cal(a - b));
 	}
 
 }

@@ -14,6 +14,7 @@ public class A {
 		Scanner scanner = new Scanner(System.in);
 		int a = scanner.nextInt();
 		System.out.print(a + "!" + "=");
+		//印出階層計算所有值
 		for (int s = 1; s < a; s++) {
 			System.out.print(s + "x");
 		}
